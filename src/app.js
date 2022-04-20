@@ -1,6 +1,13 @@
-import { LightningElement } from "lwc";
+import { LightningElement, api } from "lwc";
 
 export default class App extends LightningElement {
+@api names;
+numberFieldValue;
+     bike = {
+        name: 'Electra X4',
+        picture: 'https://s3-us-west-1.amazonaws.com/sfdc-demo/ebikes/electrax4.jpg'
+    };
+    @api message = 'This is my bike site';
     name = 'Electra X4';
    description = 'A sweet bike built for comfort.';
    category = 'Mountain';
@@ -14,4 +21,9 @@ export default class App extends LightningElement {
            this.ready = true;
        }, 3000);
    }
+
+   handleNumberChange(event){
+   this.numberFieldValue = event.target.value;
+}
+
 }
