@@ -18,4 +18,26 @@ export default class App extends LightningElement {
         this.buttonIconStatefulState = !this.buttonIconStatefulState;
     }
 
+    handleZoomIn(){
+
+        var body = document.querySelector("body");
+                var currWidth = body.clientWidth;
+                if(currWidth == 1000000){
+                    alert("Maximum zoom-in level of 1 Million reached.");
+                } else{
+                    body.style.width = (currWidth + 50) + "px";
+                } 
+    }
+
+    handleZoomOut() {
+
+        var body = document.querySelector("body");
+                var currWidth = body.clientWidth;
+                if(currWidth == 500000){
+                    alert("Maximum zoom-out level reached.");
+                } else{
+                    body.style.width = (currWidth - 50) + "px";
+                }
+    }
+
 }
