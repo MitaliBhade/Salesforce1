@@ -3,6 +3,7 @@ import { LightningElement, api } from "lwc";
 export default class App extends LightningElement {
 @api names;
 numberFieldValue;
+buttonValue;
      bike = {
         name: 'Electra X4',
         picture: 'https://s3-us-west-1.amazonaws.com/sfdc-demo/ebikes/electrax4.jpg'
@@ -24,6 +25,10 @@ numberFieldValue;
 
    handleNumberChange(event){
    this.numberFieldValue = event.target.value;
+}
+
+handleButtonChange(event){
+    this.buttonValue = 'Button is clicked';
 }
 
 }
